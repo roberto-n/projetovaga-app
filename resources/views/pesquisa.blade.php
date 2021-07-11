@@ -4,39 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pesquisa Pet</title>
 </head>
 <body>
     <div>
-    <form action="{{route('pet.index'}}"  method="get">
+    <form action="{{route('pet.index')}}"  method="get">
     @csrf
 
     <label for="animal">Nome animal </label>
     <input type="text" name="animal"> </input>
      <br>
-    <label for="raca">raça</label>
+    <label for="raca">Raça</label>
     <input type="text" name="raca"></input>
     <br>
 
-    <label for="tipo">tipo</label>
+    <label for="tipo">Tipo</label>
     <input type="text" name="tipo"></input>
     <br>
 
-    <label for="dono">dono</label>
+    <label for="dono">Dono</label>
     <input type="text" name="dono"></input>
     <br>
 
-    <label for="contatodono">contato</label>
+    <label for="contatodono">Contato</label>
     <input type="tel" name="contatodono"></input>
 
-    <button type="button">pesquisar</button>
+    <button type="button">Pesquisar</button>
 
     </form>
-    </div>
-
-
-
-
-
+</div>
 </body>
 </html>

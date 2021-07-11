@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pet;
+use App\Models\Pet;
 use Illuminate\Http\Request;
 
 
@@ -15,10 +15,10 @@ class PetController extends Controller
      */
     public function index()
     {
-        $ver=pet::where('name','$request->name')
-        $ver->paginate(10)
+        $ver=Pet::where('name','$request->name');
+        $ver->paginate(10);
 
-        return view(lista,$ver)
+        return view('lista',$ver);
     }
 
     /**
@@ -29,7 +29,7 @@ class PetController extends Controller
     public function create(Request $request) 
     {
       
-       return view(vercadastro,['id'=>$id])
+       return view('cadastro');
     }
 
     /**
@@ -41,11 +41,11 @@ class PetController extends Controller
     public function store(Request $request )
     {
 
-        $pet= new pet
-        $pet=$request
-        $pet->Save()
+        $pet=new Pet;
+        $pet=$request;
+        $pet->Save();
 
-        return redirect ('show',['id'=>$id])
+        return redirect ('vercadastro',['id'=>$id]);
     }
 
     /**
@@ -54,13 +54,13 @@ class PetController extends Controller
      * @param  \App\pet  $pet
      * @return \Illuminate\Http\Response
      */
-    public function show(pet $pet $id)
+    public function show(pet $pet )
     {
         
-        $ver=new pet
-        $ver->find($id)
+        $ver=new Pet;
+        $ver->find($id);
 
-        return view(vercadastro,$ver)
+        return view('vercadastro',$ver);
     }
 
     /**
